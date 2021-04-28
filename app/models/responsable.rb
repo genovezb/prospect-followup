@@ -1,3 +1,3 @@
 class Responsable < ApplicationRecord
-  has_many: constructions
+  has_many :constructions
 end

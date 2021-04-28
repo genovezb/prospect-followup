@@ -1,3 +1,3 @@
 class Construction < ApplicationRecord
-  belongs_to: responsable
+  belongs_to :responsable
 end
