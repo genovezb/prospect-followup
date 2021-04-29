@@ -1,0 +1,13 @@
+<h1>New Construction</h1>
+  <div>
+    <%= simple_form_for [@construction] do |f| %>
+      <%= f.input :street, label: 'Sreet' %>
+      <%= f.input :number, label: 'Number' %>
+      <%= f.input :complement, label: 'Complement' %>
+      <%= f.input :city, label: 'City' %>
+      <%= f.input :state, label: 'State' %>
+      <%= f.input :detail, label: 'Detail' %>
+
+      <%= f.submit "Add ✔", class: 'btn btn-success' %>
+    <% end %>
+  </div>
