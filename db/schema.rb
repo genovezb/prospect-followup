@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_012845) do
+ActiveRecord::Schema.define(version: 2021_04_30_003150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "constructions", force: :cascade do |t|
+    t.string "street"
+    t.integer "number"
+    t.string "complement"
+    t.string "city"
+    t.string "state"
+    t.string "detail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "responsable_id", null: false
+    t.index ["responsable_id"], name: "index_constructions_on_responsable_id"
+  end
+
+  create_table "responsables", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.integer "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +48,5 @@ ActiveRecord::Schema.define(version: 2021_04_28_012845) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "constructions", "responsables"
 end

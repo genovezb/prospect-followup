@@ -1,0 +1,10 @@
+<h1>New Responsable</h1>
+  <div>
+    <%= simple_form_for [@responsable] do |f| %>
+      <%= f.input :name, label: 'Name' %>
+      <%= f.input :company, label: 'Company' %>
+      <%= f.input :phone, label: 'Phone' %>
+
+      <%= f.submit "Add ✔", class: 'btn btn-success' %>
+    <% end %>
+  </div>
