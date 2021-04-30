@@ -1,5 +1,5 @@
 <ul>
   <% @constructions.each do |construction| %>
-  <li><%= construction.street %></li>
+  <li><%= construction.street %> - <%= construction.responsable_id %></li>
   <% end %>
 </ul>

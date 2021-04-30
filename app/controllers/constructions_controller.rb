@@ -1,20 +1,24 @@
 class ConstructionsController < ApplicationController
 
   def index
-    @constructions = Constructions.all
+    @constructions = Construction.all
   end
 
   def show
-    @constructions = Construction.find(params[:id])
+    @construction = Construction.find(params[:id])
   end
 
   def new
-    @constructions = Construction.new
+    @construction = Construction.new
   end
 
   def create
     @construction = Construction.new(construction_params)
-    @constructions.save
+    if @construction.save
+      redirect_to constructions_path(@construction), notice: 'Construction created!'
+    else
+      render :new
+    end
   end
 
 
@@ -22,7 +26,7 @@ class ConstructionsController < ApplicationController
   private
 
   def construction_params
-    params.require(:construction).permit(:sreet, :number, :complement, :city, :state, :detail, :responsable_id )
+    params.require(:construction).permit(:street, :number, :complement, :city, :state, :detail, :responsable_id )
   end
 
 end
