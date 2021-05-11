@@ -15,6 +15,7 @@ class ResponsablesController < ApplicationController
   def create
     @responsable = Responsable.new(responsable_params)
     @responsable.save
+    redirect_to responsable_path(@responsable)
   end
 
   private
