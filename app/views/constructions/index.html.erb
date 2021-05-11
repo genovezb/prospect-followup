@@ -1,5 +1,9 @@
+<h1>All Contructions</h1>
+
+<p><%= link_to 'Nova Obra', constructions_new_path %></p>
+
 <ul>
   <% @constructions.each do |construction| %>
-  <li><%= construction.street %> - <%= construction.responsable_id %></li>
+  <li><%= link_to construction.street, construction_path(construction) %> - <%= construction.responsable_id %></li>
   <% end %>
 </ul>
