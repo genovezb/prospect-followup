@@ -7,7 +7,14 @@
 <p>Detalhe: <%= @construction.detail %></p>
 <p>Responsavel: <%= @construction.responsable_id %></p>
 
-<%= link_to 'Editar', edit_construction_path %>
+<p>
+  <%= link_to 'Editar', edit_construction_path %>
+</p>
 
-<%= link_to 'Deletar', construction_path, method: :delete %>
+<p>
+ <%= link_to 'Deletar', construction_path, method: :delete %>
+</p>
 
+<p>
+ <%= link_to 'Inserir nova obra', constructions_new_path %>
+</p>

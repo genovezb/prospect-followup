@@ -1,0 +1,7 @@
+<h1>Obras em fase de Acabamento</h1>
+
+<ul>
+  <% @constructions.each do |construction| %>
+  <li><%= construction.street %> - <%= construction.responsable_id %></li>
+  <% end %>
+</ul>
