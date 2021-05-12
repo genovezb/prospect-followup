@@ -37,6 +37,15 @@ class ConstructionsController < ApplicationController
     redirect_to constructions_path
   end
 
+  def detail
+    @constructions = Construction.where(detail: "Acabamento")
+  end
+
+
+  def responsable
+    @constructions = Construction.where(responsable_id: 2)
+  end
+
   private
 
   def construction_params
