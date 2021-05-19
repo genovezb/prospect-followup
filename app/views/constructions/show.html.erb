@@ -5,7 +5,7 @@
 <p>Complemento: <%= @construction.complement %></p>
 <p>Cidade: <%= @construction.city %> - <%= @construction.state %></p>
 <p>Detalhe: <%= @construction.detail %></p>
-<p>Responsavel: <%= @construction.responsable_id %></p>
+<p>Responsavel: <%= @construction.responsable.name %> - <%= @construction.responsable.company %></p>
 
 <p>
   <%= link_to 'Editar', edit_construction_path %>

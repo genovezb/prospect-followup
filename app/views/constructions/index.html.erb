@@ -4,6 +4,6 @@
 
 <ul>
   <% @constructions.each do |construction| %>
-  <li><%= link_to construction.street, construction_path(construction) %> - <%= construction.responsable_id %></li>
+  <li><%= link_to construction.street, construction_path(construction) %> - <%= construction.responsable.name %> - <%= construction.responsable.company %></li>
   <% end %>
 </ul>

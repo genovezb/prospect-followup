@@ -4,12 +4,9 @@ Rails.application.routes.draw do
 
   get "constructions", to: "constructions#index"
   get "constructions/new", to: "constructions#new"
+  get 'constructions/detail', to: 'constructions#detail', as: 'detail_constructions'
+  get 'constructions/id:/responsable', to: 'constructions#responsable', as: 'responsable_constructions'
   post "constructions", to: "constructions#create"
-
-  get "constructions/detail", to: "constructions#detail", as: 'construction_detail'
-  get "constructions/:id/responsable", to: "constructions#responsable", as: 'construction_responsable'
-
-
   get "constructions/:id", to: "constructions#show", as:'construction'
   get "constructions/:id/edit", to: "constructions#edit", as: 'edit_construction'
   patch "constructions/:id", to: "constructions#update"
