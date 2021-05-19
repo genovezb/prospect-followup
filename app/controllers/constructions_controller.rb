@@ -1,11 +1,19 @@
 class ConstructionsController < ApplicationController
+  before_action :set_constructions, only: [:show, :edit, :update, :destroy, :responsable]
 
   def index
     @constructions = Construction.all
   end
 
+  def detail
+    @constructions = Construction.where(detail: "Acabamento")
+  end
+
+  def responsable
+    @responsable_name = @construction.name
+  end
+
   def show
-    @construction = Construction.find(params[:id])
   end
 
   def new
@@ -22,31 +30,27 @@ class ConstructionsController < ApplicationController
   end
 
   def edit
-    @construction = Construction.find(params[:id])
   end
 
   def update
-    @construction = Construction.find(params[:id])
     @construction.update(construction_params)
     redirect_to construction_path(@construction), notice: 'Construction Updated!'
   end
 
   def destroy
-    @construction = Construction.find(params[:id])
     @construction.destroy
     redirect_to constructions_path
   end
 
-  def detail
-    @constructions = Construction.where(detail: "Acabamento")
-  end
-
-
-  def responsable
-    @constructions = Construction.where(responsable_id: 2)
-  end
+  # def responsable
+  #   @constructions = Construction.where(responsable_id: 2)
+  # end
 
   private
+
+  def set_constructions
+    @construction = Construction.find(params[:id])
+  end
 
   def construction_params
     params.require(:construction).permit(:street, :number, :complement, :city, :state, :detail, :responsable_id )
