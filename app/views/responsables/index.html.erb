@@ -2,6 +2,6 @@
 
 <ul>
   <% @responsables.each do |responsable| %>
-  <li><%= responsable.name %> - <%= responsable.company %> - <%= responsable.phone %></li>
+  <li> <%= link_to responsable.company, responsable_path(responsable) %> - <%= responsable.name %> - <%= responsable.phone %></li>
   <% end %>
 </ul>

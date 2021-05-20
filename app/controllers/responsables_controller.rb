@@ -8,6 +8,10 @@ class ResponsablesController < ApplicationController
     @responsable = Responsable.find(params[:id])
   end
 
+  def constructions
+    @constructions = Construction.where(responsable_id: 2)
+  end
+
   def new
     @responsable = Responsable.new
   end
